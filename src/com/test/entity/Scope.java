@@ -21,7 +21,7 @@ public class Scope {
 	public String toString() {
 		String str = "";
 		for(Statement statement : statements) {
-			str += statement.toString() + ";";
+			str += statement.toString() + ";\n";
 		}
 		return str;
 	}

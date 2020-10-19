@@ -27,9 +27,14 @@ public class Parser {
 		global = new Global();
 	}
 	
+	public Parser(File file) {
+		Lexer lexer = new Lexer(file);
+		tokens = lexer.lex();
+		global = new Global();
+	}
+	
 	public static void main(String[] args) throws Exception {
-		Lexer lexer = new Lexer(new File("1.js"));
-		Parser parser = new Parser(lexer.lex());
+		Parser parser = new Parser(new File("1.js"));
 		Global global = parser.parse();
 		System.out.println(global.toString());
 	}
